@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taekwondo Flashcards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>TAGB Flashcards</h1>
+            <div class="controls-top">
+                <div class="select-wrapper">
+                    <select id="grade-filter">
+                        <option value="all">All Grades</option>
+                        <option value="10th Kup">10th Kup</option>
+                        <option value="9th Kup">9th Kup</option>
+                        <option value="8th Kup">8th Kup</option>
+                        <option value="7th Kup">7th Kup</option>
+                        <option value="6th Kup">6th Kup</option>
+                        <option value="5th Kup">5th Kup</option>
+                        <option value="4th Kup">4th Kup</option>
+                        <option value="3rd Kup">3rd Kup</option>
+                    </select>
+                </div>
+                <div class="select-wrapper">
+                    <select id="language-mode">
+                        <option value="en-ko">English to Korean</option>
+                        <option value="ko-en">Korean to English</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="card-container" id="flashcard">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-category" id="front-category"></div>
+                        <div class="card-word" id="front-word"></div>
+                        <div class="card-hint">Tap to flip</div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-category" id="back-category"></div>
+                        <div class="card-word" id="back-word"></div>
+                        <div class="card-level" id="back-level"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-bottom">
+                <button id="btn-prev" class="btn secondary">Previous</button>
+                <div class="progress" id="progress-text">1 / 10</div>
+                <button id="btn-next" class="btn primary">Next</button>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
