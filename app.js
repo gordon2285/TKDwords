@@ -1,9 +1,17 @@
 import { flashcards } from './data.js';
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 let currentIndex = 0;
 let isFlipped = false;
 let mode = 'en-ko'; // Options: 'ko-en' or 'en-ko'
-let activeCards = [...flashcards]; // Filtered subset
+let activeCards = shuffleArray([...flashcards]); // Filtered subset
 
 // DOM Elements
 const cardContainer = document.getElementById('flashcard');
@@ -24,12 +32,12 @@ const KUP_ORDER = ['10th Kup', '9th Kup', '8th Kup', '7th Kup', '6th Kup', '5th 
 function applyFilter() {
     const grade = gradeFilterSelect.value;
     if (grade === 'all') {
-        activeCards = [...flashcards];
+        activeCards = shuffleArray([...flashcards]);
     } else {
         // Include selected grade AND all lower (higher-numbered) grades
         const cutoff = KUP_ORDER.indexOf(grade);
         const included = new Set(KUP_ORDER.slice(0, cutoff + 1));
-        activeCards = flashcards.filter(c => included.has(c.level));
+        activeCards = shuffleArray(flashcards.filter(c => included.has(c.level)));
     }
     currentIndex = 0;
     updateCard();
