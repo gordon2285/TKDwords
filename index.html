@@ -13,6 +13,10 @@
     <div class="app-container">
         <header>
             <h1>TAGB Flashcards</h1>
+            <div class="mode-tabs">
+                <button id="tab-flashcards" class="tab active">Flashcards</button>
+                <button id="tab-quiz" class="tab">Quiz</button>
+            </div>
             <div class="controls-top">
                 <div class="select-wrapper">
                     <select id="grade-filter">
@@ -37,25 +41,54 @@
         </header>
 
         <main>
-            <div class="card-container" id="flashcard">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <div class="card-category" id="front-category"></div>
-                        <div class="card-word" id="front-word"></div>
-                        <div class="card-hint">Tap to flip</div>
+            <!-- Flashcards View -->
+            <div id="view-flashcards">
+                <div class="card-container" id="flashcard">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-category" id="front-category"></div>
+                            <div class="card-word" id="front-word"></div>
+                            <div class="card-hint">Tap to flip</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-category" id="back-category"></div>
+                            <div class="card-word" id="back-word"></div>
+                            <div class="card-level" id="back-level"></div>
+                        </div>
                     </div>
-                    <div class="card-back">
-                        <div class="card-category" id="back-category"></div>
-                        <div class="card-word" id="back-word"></div>
-                        <div class="card-level" id="back-level"></div>
-                    </div>
+                </div>
+
+                <div class="controls-bottom">
+                    <button id="btn-prev" class="btn secondary">Previous</button>
+                    <div class="progress" id="progress-text">1 / 10</div>
+                    <button id="btn-next" class="btn primary">Next</button>
                 </div>
             </div>
 
-            <div class="controls-bottom">
-                <button id="btn-prev" class="btn secondary">Previous</button>
-                <div class="progress" id="progress-text">1 / 10</div>
-                <button id="btn-next" class="btn primary">Next</button>
+            <!-- Quiz View -->
+            <div id="view-quiz" class="hidden">
+                <div id="quiz-active-area">
+                    <div class="quiz-header">
+                        <div class="quiz-progress" id="quiz-progress-text">Question 1 / 10</div>
+                        <div class="quiz-score" id="quiz-score-text">Score: 0</div>
+                    </div>
+                    <div class="quiz-question-container">
+                        <div class="quiz-category" id="quiz-category"></div>
+                        <div class="quiz-question" id="quiz-question"></div>
+                    </div>
+                    <div class="quiz-options" id="quiz-options">
+                        <!-- Options injected by JS -->
+                    </div>
+                </div>
+                
+                <!-- Quiz End State -->
+                <div class="quiz-end hidden" id="quiz-end">
+                    <h2>Quiz Complete!</h2>
+                    <div class="final-score-circle">
+                        <span id="quiz-final-score">10 / 10</span>
+                    </div>
+                    <button id="btn-restart-quiz" class="btn primary">Restart Quiz</button>
+                </div>
             </div>
         </main>
     </div>
