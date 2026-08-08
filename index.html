@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taekwondo Flashcards</title>
+    <title>TAGB Reference Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
@@ -12,23 +12,28 @@
 <body>
     <div class="app-container">
         <header>
-            <h1>TAGB Flashcards</h1>
+            <h1>TAGB Reference Hub</h1>
             <div class="mode-tabs">
-                <button id="tab-flashcards" class="tab active">Flashcards</button>
-                <button id="tab-quiz" class="tab">Quiz</button>
+                <button data-view="flashcards" class="tab active">Flashcards</button>
+                <button data-view="quiz" class="tab">Quiz</button>
+                <button data-view="belts" class="tab">Belt Colors</button>
+                <button data-view="patterns" class="tab">Patterns</button>
+                <button data-view="syllabus" class="tab">Syllabus</button>
             </div>
             <div class="controls-top">
                 <div class="select-wrapper">
                     <select id="grade-filter">
                         <option value="all">All Grades</option>
-                        <option value="10th Kup">10th Kup</option>
-                        <option value="9th Kup">9th Kup</option>
-                        <option value="8th Kup">8th Kup</option>
-                        <option value="7th Kup">7th Kup</option>
-                        <option value="6th Kup">6th Kup</option>
-                        <option value="5th Kup">5th Kup</option>
-                        <option value="4th Kup">4th Kup</option>
-                        <option value="3rd Kup">3rd Kup</option>
+                        <option value="10th Kup">10th Kup (White Belt)</option>
+                        <option value="9th Kup">9th Kup (Yellow Tag)</option>
+                        <option value="8th Kup">8th Kup (Yellow Belt)</option>
+                        <option value="7th Kup">7th Kup (Green Tag)</option>
+                        <option value="6th Kup">6th Kup (Green Belt)</option>
+                        <option value="5th Kup">5th Kup (Blue Tag)</option>
+                        <option value="4th Kup">4th Kup (Blue Belt)</option>
+                        <option value="3rd Kup">3rd Kup (Red Tag)</option>
+                        <option value="2nd Kup">2nd Kup (Red Belt)</option>
+                        <option value="1st Kup">1st Kup (Black Tag)</option>
                     </select>
                 </div>
                 <div class="select-wrapper">
@@ -40,56 +45,8 @@
             </div>
         </header>
 
-        <main>
-            <!-- Flashcards View -->
-            <div id="view-flashcards">
-                <div class="card-container" id="flashcard">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="card-category" id="front-category"></div>
-                            <div class="card-word" id="front-word"></div>
-                            <div class="card-hint">Tap to flip</div>
-                        </div>
-                        <div class="card-back">
-                            <div class="card-category" id="back-category"></div>
-                            <div class="card-word" id="back-word"></div>
-                            <div class="card-level" id="back-level"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="controls-bottom">
-                    <button id="btn-prev" class="btn secondary">Previous</button>
-                    <div class="progress" id="progress-text">1 / 10</div>
-                    <button id="btn-next" class="btn primary">Next</button>
-                </div>
-            </div>
-
-            <!-- Quiz View -->
-            <div id="view-quiz" class="hidden">
-                <div id="quiz-active-area">
-                    <div class="quiz-header">
-                        <div class="quiz-progress" id="quiz-progress-text">Question 1 / 10</div>
-                        <div class="quiz-score" id="quiz-score-text">Score: 0</div>
-                    </div>
-                    <div class="quiz-question-container">
-                        <div class="quiz-category" id="quiz-category"></div>
-                        <div class="quiz-question" id="quiz-question"></div>
-                    </div>
-                    <div class="quiz-options" id="quiz-options">
-                        <!-- Options injected by JS -->
-                    </div>
-                </div>
-                
-                <!-- Quiz End State -->
-                <div class="quiz-end hidden" id="quiz-end">
-                    <h2>Quiz Complete!</h2>
-                    <div class="final-score-circle">
-                        <span id="quiz-final-score">10 / 10</span>
-                    </div>
-                    <button id="btn-restart-quiz" class="btn primary">Restart Quiz</button>
-                </div>
-            </div>
+        <main id="app-content">
+            <!-- Router will dynamically mount the active view here -->
         </main>
     </div>
     <script type="module" src="app.js"></script>
