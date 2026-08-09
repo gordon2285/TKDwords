@@ -26,7 +26,7 @@ Expand the site into a multi-section TAGB Taekwondo Reference & Training Hub wit
 
 ## Open Frontier Tickets
 
-1. [Ticket 006: Kup Grade Syllabus View](file:///c:/git/tagb/wayfinder/tickets/006-kup-grade-syllabus-view.md) (`wayfinder:prototype`, unblocked)
+(None - Map completed!)
 
 ## Not yet specified
 
@@ -38,3 +38,4 @@ Expand the site into a multi-section TAGB Taekwondo Reference & Training Hub wit
 
 - Multi-user authentication, user accounts, or backend cloud databases (client-side web application only).
 - Video playback streaming server hosting.
+- [Ticket 006: Kup Grade Syllabus View](file:///c:/git/tagb/wayfinder/tickets/006-kup-grade-syllabus-view.md) — The user decided a dedicated syllabus tab is not wanted for now.

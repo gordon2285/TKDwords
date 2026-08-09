@@ -18,8 +18,7 @@ const views = {
     'flashcards': new FlashcardsView(),
     'quiz': new QuizView(),
     'belts': new BeltsView(),
-    'patterns': new PatternsView(),
-    'syllabus': null // To be implemented in Ticket 006
+    'patterns': new PatternsView()
 };
 
 let activeViewInstance = null;
